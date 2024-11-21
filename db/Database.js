@@ -9,7 +9,7 @@ const connectDb = async () => {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     ssl: true,
-    sslValidate: false, // Add this if SSL certificate validation fails
+    // Add this if SSL certificate validation fails
   });
   console.log("database connected");
 };
