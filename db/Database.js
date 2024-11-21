@@ -1,8 +1,11 @@
 const mongoose = require("mongoose");
 
+const uri = process.env.MONGODB_URI;
+
+console.log("mongodb uri", uri);
+
 const connectDb = async () => {
-  dbUri = "mongodb://localhost:27017/login&Register";
-  await mongoose.connect(dbUri);
+  await mongoose.connect(uri);
   console.log("database connected");
 };
 

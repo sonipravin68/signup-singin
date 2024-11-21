@@ -1,7 +1,9 @@
 const express = require("express");
 const app = express();
-const dbconnection = require("./db/Database");
 const AuthRoute = require("./routes/Authrouter");
+
+require("dotenv").config();
+const dbconnection = require("./db/Database");
 
 const PORT = 7070;
 
