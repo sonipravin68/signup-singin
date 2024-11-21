@@ -97,6 +97,9 @@ const login = async (req, res) => {
       jwtToken: token,
       success: true,
       name: existUser.name,
+      email: existUser.email,
+      phone: existUser.phone,
+      district: existUser.district,
     });
   } catch (err) {
     res.status(500).json(
