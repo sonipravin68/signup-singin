@@ -7,9 +7,20 @@ const register = async (req, res) => {
     const { name, phone, email, password, state, district } = req.body;
 
     let existUser = await User.findOne({ email });
+    console.log(existUser);
+
+    let existNumbeer = await User.findOne({ phone });
+    console.log(existNumbeer);
 
     if (existUser) {
-      return res.status(409).json({ message: "user is already registed" });
+      return res.status(409).json({
+        message: " email is already is registered ",
+      });
+    }
+    if (existNumbeer) {
+      return res.status(409).json({
+        message: "mobile number is already registed ",
+      });
     }
 
     const hasPassword = await bcrypt.hash(password, 10);
